@@ -1,15 +1,16 @@
 ---
-import "../styles/global.css";
+import '../styles/global.css'
+import favicon from '../assets/visionxairy-icon.svg'
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/visionxairy-favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href={favicon.src} />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>VisionXAiRy</title>
 	</head>
 	<body class="bg-base-100 text-base-content flex flex-col min-h-screen">
 		<slot />
