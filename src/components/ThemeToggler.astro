@@ -41,26 +41,29 @@
 </label>
 
 <script class="hidden" type="module">
+    const lightTheme = "corporate";
+    const darkTheme = "business";
+
     const html = document.documentElement;
     const toggle = document.querySelector(".theme-controller");
     const mq = window.matchMedia("(prefers-color-scheme: dark)");
     
     // Apply initial theme
     const saved = localStorage.getItem("theme");
-    if (saved === "dark" || saved === "light") {
+    if (saved === darkTheme || saved === lightTheme) {
         html.setAttribute("data-theme", saved);
-        toggle.checked = saved === "dark";
+        toggle.checked = saved === darkTheme;
     } else {
         // no choice saved → use system
         const systemDark = mq.matches;
-        html.setAttribute("data-theme", systemDark ? "dark" : "light");
+        html.setAttribute("data-theme", systemDark ? darkTheme : lightTheme);
         toggle.checked = systemDark;
     }
 
     // Listen for system changes when there's no override
     mq.addEventListener("change", (e) => {
         if (!localStorage.getItem("theme")) {
-            html.setAttribute("data-theme", e.matches ? "dark" : "light");
+            html.setAttribute("data-theme", e.matches ? darkTheme : lightTheme);
             toggle.checked = e.matches;
         }
     });
@@ -68,7 +71,7 @@
     // User toggles
     toggle.addEventListener("change", () => {
         const isDark = toggle.checked;
-        html.setAttribute("data-theme", isDark ? "dark" : "light");
-        localStorage.setItem("theme", isDark ? "dark" : "light");
+        html.setAttribute("data-theme", isDark ? darkTheme : lightTheme);
+        localStorage.setItem("theme", isDark ? darkTheme : lightTheme);
     });
 </script>

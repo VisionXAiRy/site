@@ -1,12 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Footer from "../components/Navbar.astro";
-import Navbar from "../components/Navbar.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
-    <Navbar />
+    <Header />
     <main class="flex-1 container mx-auto px-4 prose lg:prose-xl max-w-100vh">
         <slot />
     </main>
+    <Footer />
 </Layout>
