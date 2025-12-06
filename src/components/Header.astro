@@ -1,4 +1,5 @@
 ---
+import logo from "../assets/visionxairy-icon.svg?raw";
 import ThemeToggler from "./ThemeToggler.astro";
 ---
 
@@ -34,7 +35,7 @@ import ThemeToggler from "./ThemeToggler.astro";
         </li>
       </ul>
     </div>
-    <a class="btn btn-ghost text-xl" href="/">VisionXAiRy</a>
+    <a class="btn btn-ghost text-xl" href="/"><div class="w-6 h-6 mx-auto text-base-content [&>svg]:w-full [&>svg]:h-full [&>svg]:fill-current" set:html={logo}/>VisionXAiRy</a>
   </div>
 
   <div class="navbar-center hidden lg:flex">
